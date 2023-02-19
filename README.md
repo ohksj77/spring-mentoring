@@ -17,4 +17,4 @@
 - H2 Database
 ## Version
 - V1 -> 간단히 구현한 버전
-- V2 -> DTO, Mapper, BaseTime, ResponseEntity 등을 추가한 버전
+- V2 -> DTO, Mapper, BaseTime, ResponseEntity, custom Exception 등을 추가한 버전
