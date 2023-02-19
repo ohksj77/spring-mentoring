@@ -44,10 +44,10 @@ public class Article extends BaseTime {
     }
 
     public Integer cancelLike() {
-        if (likeCount > 0) {
-            return --this.likeCount;
+        if (likeCount < 1) {
+            throw new LikeCountMinusException();
         }
-        throw new LikeCountMinusException();
+        return --this.likeCount;
     }
 
     public void delete() {

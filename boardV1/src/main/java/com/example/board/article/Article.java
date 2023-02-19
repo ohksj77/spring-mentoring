@@ -37,9 +37,9 @@ public class Article {
     }
 
     public Integer cancelLike() {
-        if (likeCount > 0) {
-            return --this.likeCount;
+        if (likeCount < 1) {
+            throw new IllegalStateException();
         }
-        throw new IllegalStateException();
+        return --this.likeCount;
     }
 }
