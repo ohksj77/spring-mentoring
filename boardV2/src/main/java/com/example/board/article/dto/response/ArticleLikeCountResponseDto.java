@@ -1,4 +1,4 @@
-package com.example.board.articleV2.dto.response;
+package com.example.board.article.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ArticleIdResponseDto {
-    private Long id;
+public class ArticleLikeCountResponseDto {
+    private Integer likeCount;
 }

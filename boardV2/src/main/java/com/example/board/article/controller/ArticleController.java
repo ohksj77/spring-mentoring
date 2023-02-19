@@ -1,11 +1,11 @@
-package com.example.board.articleV2.controller;
+package com.example.board.article.controller;
 
-import com.example.board.articleV2.dto.request.ArticleRequestDto;
-import com.example.board.articleV2.dto.response.ArticleIdResponseDto;
-import com.example.board.articleV2.dto.response.ArticleLikeCountResponseDto;
-import com.example.board.articleV2.dto.response.ArticleResponseDto;
-import com.example.board.articleV2.entity.ArticleType;
-import com.example.board.articleV2.service.ArticleService;
+import com.example.board.article.dto.request.ArticleRequestDto;
+import com.example.board.article.dto.response.ArticleIdResponseDto;
+import com.example.board.article.dto.response.ArticleLikeCountResponseDto;
+import com.example.board.article.dto.response.ArticleResponseDto;
+import com.example.board.article.entity.ArticleType;
+import com.example.board.article.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

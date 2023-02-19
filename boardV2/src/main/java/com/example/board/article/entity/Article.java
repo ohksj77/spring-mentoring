@@ -1,6 +1,6 @@
-package com.example.board.articleV2.entity;
+package com.example.board.article.entity;
 
-import com.example.board.articleV2.exception.LikeCountMinusException;
+import com.example.board.article.exception.LikeCountMinusException;
 import com.example.board.global.BaseTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

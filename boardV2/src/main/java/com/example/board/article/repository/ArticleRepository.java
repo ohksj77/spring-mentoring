@@ -1,7 +1,7 @@
-package com.example.board.articleV2.repository;
+package com.example.board.article.repository;
 
-import com.example.board.articleV2.entity.Article;
-import com.example.board.articleV2.entity.ArticleType;
+import com.example.board.article.entity.Article;
+import com.example.board.article.entity.ArticleType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.board.articleV2.entity;
+package com.example.board.article.entity;
 
 public enum ArticleType {
     FRONTEND, BACKEND

@@ -1,8 +1,8 @@
-package com.example.board.articleV2.mapper;
+package com.example.board.article.mapper;
 
-import com.example.board.articleV2.dto.request.ArticleRequestDto;
-import com.example.board.articleV2.dto.response.ArticleResponseDto;
-import com.example.board.articleV2.entity.Article;
+import com.example.board.article.dto.request.ArticleRequestDto;
+import com.example.board.article.dto.response.ArticleResponseDto;
+import com.example.board.article.entity.Article;
 import org.springframework.stereotype.Component;
 
 @Component
