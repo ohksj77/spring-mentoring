@@ -2,6 +2,7 @@ package com.example.board.article.entity;
 
 import com.example.board.article.exception.LikeCountMinusException;
 import com.example.board.global.BaseTime;
+import com.example.board.global.SoftDelete;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import javax.persistence.*;
 
 @Getter
 @Entity
-@Where(clause = "deleted_at is null")
+@SoftDelete
 @AllArgsConstructor
 @NoArgsConstructor
 public class Article extends BaseTime {

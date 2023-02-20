@@ -50,7 +50,8 @@ public class ArticleController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteArticle(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteArticle(@PathVariable Long id) {
         articleService.deleteArticle(id);
+        return ResponseEntity.ok().build();
     }
 }
