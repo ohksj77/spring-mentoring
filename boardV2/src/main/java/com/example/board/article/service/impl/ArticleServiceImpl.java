@@ -1,7 +1,6 @@
 package com.example.board.article.service.impl;
 
 import com.example.board.article.dto.request.ArticleRequestDto;
-import com.example.board.article.dto.response.ArticleIdResponseDto;
 import com.example.board.article.dto.response.ArticleLikeCountResponseDto;
 import com.example.board.article.dto.response.ArticleResponseDto;
 import com.example.board.article.entity.Article;
@@ -9,6 +8,7 @@ import com.example.board.article.entity.ArticleType;
 import com.example.board.article.mapper.ArticleMapper;
 import com.example.board.article.repository.ArticleRepository;
 import com.example.board.article.service.ArticleService;
+import com.example.board.global.IdResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,8 +25,8 @@ public class ArticleServiceImpl implements ArticleService {
     private final ArticleMapper articleMapper;
 
     @Override
-    public ArticleIdResponseDto saveArticle(ArticleRequestDto dto) {
-        return new ArticleIdResponseDto(articleRepository.save(articleMapper.toEntity(dto)).getId());
+    public IdResponse<Long> saveArticle(ArticleRequestDto dto) {
+        return new IdResponse<>(articleRepository.save(articleMapper.toEntity(dto)).getId());
     }
 
     @Override
