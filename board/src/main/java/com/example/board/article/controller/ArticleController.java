@@ -1,10 +1,10 @@
 package com.example.board.article.controller;
 
 import com.example.board.article.dto.request.ArticleRequestDto;
-import com.example.board.article.dto.response.ArticleLikeCountResponseDto;
 import com.example.board.article.dto.response.ArticleResponseDto;
-import com.example.board.article.entity.ArticleType;
+import com.example.board.article.dto.response.LikeCountResponseDto;
 import com.example.board.article.service.ArticleService;
+import com.example.board.article.entity.ArticleType;
 import com.example.board.global.IdResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,15 +14,19 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@RequestMapping("/articles")
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/articles")
 public class ArticleController {
-
     private final ArticleService articleService;
 
     @PostMapping
-    public ResponseEntity<IdResponse<Long>> saveArticle(@Valid @RequestBody ArticleRequestDto dto) {
-        return ResponseEntity.ok(articleService.saveArticle(dto));
+    public ResponseEntity<IdResponse<Long>> saveArticle(@Valid @RequestBody ArticleRequestDto article) {
+        return ResponseEntity.ok(articleService.saveArticle(article));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ArticleResponseDto> getArticle(@PathVariable Long id) {
+        return ResponseEntity.ok(articleService.getArticle(id));
     }
 
     @GetMapping("/all-types")
@@ -31,23 +35,18 @@ public class ArticleController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ArticleResponseDto>> getArticleList(@RequestParam ArticleType type) {
+    public ResponseEntity<List<ArticleResponseDto>> getArticleListByType(@RequestParam ArticleType type) {
         return ResponseEntity.ok(articleService.getArticleListByType(type));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ArticleResponseDto> getArticle(@PathVariable Long id) {
-        return ResponseEntity.ok(articleService.getArticle(id));
-    }
-
     @PostMapping("/{id}/like-count/add")
-    public ResponseEntity<ArticleLikeCountResponseDto> addLikeCount(@PathVariable Long id) {
-        return ResponseEntity.ok(articleService.addLike(id));
+    public ResponseEntity<LikeCountResponseDto> addLikeCount(@PathVariable Long id) {
+        return ResponseEntity.ok(articleService.addLikeCount(id));
     }
 
     @PostMapping("/{id}/like-count/cancel")
-    public ResponseEntity<ArticleLikeCountResponseDto> cancelLikeCount(@PathVariable Long id) {
-        return ResponseEntity.ok(articleService.cancelLike(id));
+    public ResponseEntity<LikeCountResponseDto> cancelLikeCount(@PathVariable Long id) {
+        return ResponseEntity.ok(articleService.cancelLikeCount(id));
     }
 
     @DeleteMapping("/{id}")
